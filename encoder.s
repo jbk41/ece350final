@@ -1,6 +1,8 @@
 .text
 # put message into $r1
+addi $r1, $r0, 1365
 # num bits = $r6
+addi $r6, $r0, 12
 
 # amt to shift to start
 addi $r10, $r0, 32
