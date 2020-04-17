@@ -7,7 +7,7 @@ addi $r6, $r0, 12
 # amt to shift to start
 addi $r10, $r0, 32
 sub  $r28, $r10, $r6
-srl  $r1, $r1, $r28
+sllr  $r1, $r1, $r28
 
 
 lw $r2, 0($r0) #r2 = and_1

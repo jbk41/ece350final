@@ -27,6 +27,7 @@ struct instruction_t
 #define OPCODE_SRA    0x5
 #define OPCODE_XOR    0x6
 #define OPCODE_SRL    0x7
+#define OPCODE_SLLR   0x8
 #define OPCODE_SW     0x7
 #define OPCODE_LW     0x8
 #define OPCODE_J      0x1
@@ -48,6 +49,7 @@ instruction_t opcode_arr[] = {
     instruction_t(OPCODE_ALU, OPCODE_SRA,      "sra",   RSH),
     instruction_t(OPCODE_ALU, OPCODE_XOR,      "xor",   R),
     instruction_t(OPCODE_ALU, OPCODE_SRL,      "srl",   R),
+    instruction_t(OPCODE_ALU, OPCODE_SLLR,     "sllr",  R),
     instruction_t(OPCODE_SW, OPCODE_ALU_DEFAULT,   "sw",    IDisp),
     instruction_t(OPCODE_LW, OPCODE_ALU_DEFAULT,   "lw",    IDisp),
     instruction_t(OPCODE_J, OPCODE_ALU_DEFAULT,    "j",     J),
