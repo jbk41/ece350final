@@ -24,16 +24,16 @@ and $r11, $r11, $r10 #r12  = shift 1
 
 # shift 2
 and $r12, $r1, $r3 
-sra $r12, $r1, 3
+sra $r12, $r12, 3
 
 
 # shift 3
 and $r13, $r1, $r4
-sra $r13, $r1, 4
+sra $r13, $r13, 4
 
 # shift 4
 and $r14, $r1, $r5 
-sra $r14, $r1, 5
+sra $r14, $r14, 5
 
 #message w parity = $r20
 lw $r21, 4($r0) #r21 = p1
