@@ -62,7 +62,7 @@ addi $r7,  $r7, 1 # 5 parity bits
 
 k_done:
 
-addi $r21, $r0, 1 # holds a 1
+addi $r21, $r0, 2 # holds a 1
 
 addi $r27, $r0, 1 
 blt $r7, $r27, fully_done
@@ -86,7 +86,7 @@ addi $r27, $r0, 1
 blt $r7, $r27, fully_done
 xor $r26, $r20, $r23
 bne $r26, $r23, skip_p3
-lw  $r23, 11($r0)
+lw  $r23, 12($r0)
 or $r20, $r20, $r23
 
 skip_p3:
@@ -95,7 +95,7 @@ addi $r27, $r0, 1
 blt $r7, $r27, fully_done
 xor $r26, $r20, $r24
 bne $r26, $r24, skip_p4
-lw  $r24, 11($r0)
+lw  $r24, 13($r0)
 or $r20, $r20, $r24
 
 skip_p4:
@@ -104,21 +104,13 @@ addi $r27, $r0, 1
 blt $r7, $r27, fully_done
 xor $r26, $r20, $r25
 bne $r26, $r25, skip_p5
-lw  $r25, 11($r0)
+lw  $r25, 14($r0)
 or $r20, $r20, $r25
 
 skip_p5:
 
-addi $r27, $r0, 1 
-blt $r7, $r27, fully_done
-xor $r9, $r20, $r25
-bne $r9, $r25, skip_p5
-lw  $r25, 11($r0)
-or $r20, $r20, $r25
 
-skip_p5:
-
-fully_done
+fully_done:
 add $r29, $r20, $r0
 addi $r30, $r0, 1
 
