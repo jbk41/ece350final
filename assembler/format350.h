@@ -47,7 +47,7 @@ instruction_t opcode_arr[] = {
     instruction_t(OPCODE_ALU, OPCODE_SLL,      "sll",   RSH),
     instruction_t(OPCODE_ALU, OPCODE_SRA,      "sra",   RSH),
     instruction_t(OPCODE_ALU, OPCODE_XOR,      "xor",   R),
-    instruction_t(OPCODE_ALU, OPCODE_SRK,      "srl",   R),
+    instruction_t(OPCODE_ALU, OPCODE_SRL,      "srl",   R),
     instruction_t(OPCODE_SW, OPCODE_ALU_DEFAULT,   "sw",    IDisp),
     instruction_t(OPCODE_LW, OPCODE_ALU_DEFAULT,   "lw",    IDisp),
     instruction_t(OPCODE_J, OPCODE_ALU_DEFAULT,    "j",     J),
