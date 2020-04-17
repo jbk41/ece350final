@@ -17,7 +17,7 @@ struct instruction_t
 };
 
 #define OPCODE_ALU    0x0
-#define OPCODE_ALU_DEFAULT	0x0
+#define OPCODE_ALU_DEFAULT  0x0
 #define OPCODE_ADDI   0x5
 #define OPCODE_ADD    0x0
 #define OPCODE_SUB    0x1
@@ -25,33 +25,37 @@ struct instruction_t
 #define OPCODE_OR     0x3
 #define OPCODE_SLL    0x4
 #define OPCODE_SRA    0x5
+#define OPCODE_XOR    0x6
+#define OPCODE_SRL    0x7
 #define OPCODE_SW     0x7
 #define OPCODE_LW     0x8
 #define OPCODE_J      0x1
-#define OPCODE_BNE	  0x2
+#define OPCODE_BNE    0x2
 #define OPCODE_JAL    0x3
 #define OPCODE_JR     0x4
-#define OPCODE_BLT	  0x6
+#define OPCODE_BLT    0x6
 #define OPCODE_BEX    0x16
 #define OPCODE_SETX   0x15
 
 
 instruction_t opcode_arr[] = {
-    instruction_t(OPCODE_ALU, OPCODE_ADD,		   "add",   R),
+    instruction_t(OPCODE_ALU, OPCODE_ADD,      "add",   R),
     instruction_t(OPCODE_ADDI, OPCODE_ALU_DEFAULT, "addi",  I),
-    instruction_t(OPCODE_ALU, OPCODE_SUB,		   "sub",   R),
-	instruction_t(OPCODE_ALU, OPCODE_AND,		   "and",   R),
-	instruction_t(OPCODE_ALU, OPCODE_OR,		   "or",    R),
-    instruction_t(OPCODE_ALU, OPCODE_SLL,		   "sll",   RSH),
-    instruction_t(OPCODE_ALU, OPCODE_SRA,		   "sra",   RSH),
+    instruction_t(OPCODE_ALU, OPCODE_SUB,      "sub",   R),
+    instruction_t(OPCODE_ALU, OPCODE_AND,      "and",   R),
+    instruction_t(OPCODE_ALU, OPCODE_OR,       "or",    R),
+    instruction_t(OPCODE_ALU, OPCODE_SLL,      "sll",   RSH),
+    instruction_t(OPCODE_ALU, OPCODE_SRA,      "sra",   RSH),
+    instruction_t(OPCODE_ALU, OPCODE_XOR,      "xor",   R),
+    instruction_t(OPCODE_ALU, OPCODE_SRK,      "srl",   R),
     instruction_t(OPCODE_SW, OPCODE_ALU_DEFAULT,   "sw",    IDisp),
     instruction_t(OPCODE_LW, OPCODE_ALU_DEFAULT,   "lw",    IDisp),
-    instruction_t(OPCODE_J,	OPCODE_ALU_DEFAULT,	   "j",	    J),
+    instruction_t(OPCODE_J, OPCODE_ALU_DEFAULT,    "j",     J),
     instruction_t(OPCODE_BNE, OPCODE_ALU_DEFAULT,  "bne",   IBranchComp),
     instruction_t(OPCODE_JAL, OPCODE_ALU_DEFAULT,  "jal",   J),
     instruction_t(OPCODE_JR, OPCODE_ALU_DEFAULT,   "jr",    R1RS),
     instruction_t(OPCODE_BLT, OPCODE_ALU_DEFAULT,  "blt",   IBranchComp),
-    instruction_t(OPCODE_BEX, OPCODE_ALU_DEFAULT,  "bex",	J),
+    instruction_t(OPCODE_BEX, OPCODE_ALU_DEFAULT,  "bex", J),
     instruction_t(OPCODE_SETX, OPCODE_ALU_DEFAULT, "setx",  J),
 };
 
@@ -75,7 +79,7 @@ const int DMEM_SIZE = 1<<ADDR_BITS;
 const int STATUS_REG = 30;
 const int LINK_REG = 31;
 const int ZERO_REG = 0;
-const int DATA_BASE_ADDR = 16384;	// MSE: Doesn't seem to be used in asm.cpp or sim.cpp, so left as the old value
+const int DATA_BASE_ADDR = 16384; // MSE: Doesn't seem to be used in asm.cpp or sim.cpp, so left as the old value
 
 const int WIDTH = WORD_BITS;
 const int DEPTH = 1<<ADDR_BITS;
@@ -112,9 +116,9 @@ struct type_ji
 
 struct type_jii
 {
-	unsigned zeros : JMP_ADDR_BITS - REG_BITS;
-	unsigned rd : REG_BITS;
-	unsigned opcode : OPCODE_BITS;
+  unsigned zeros : JMP_ADDR_BITS - REG_BITS;
+  unsigned rd : REG_BITS;
+  unsigned opcode : OPCODE_BITS;
 };
 
 union inst
