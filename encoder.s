@@ -70,20 +70,18 @@ addi $r27, $r0, 2
 blt $r7, $r27, fully_done
 and $r21, $r21, $r20
 xor $r26, $r20, $r21
-bne $r26, $r21, skip_p1
+bne $r26, $r8, skip_p1
 lw  $r21, 10($r0)
 or $r20, $r20, $r21
-
-
-
 
 
 skip_p1:
 
 addi $r27, $r0, 1 
 blt $r7, $r27, fully_done
+and $r22, $r22, $r20
 xor $r26, $r20, $r22
-bne $r26, $r22, skip_p2
+bne $r26, $r8, skip_p2
 lw  $r22, 11($r0)
 or $r20, $r20, $r22
 
@@ -91,8 +89,9 @@ skip_p2:
 
 addi $r27, $r0, 1 
 blt $r7, $r27, fully_done
+and $r23, $r23, $r20
 xor $r26, $r20, $r23
-bne $r26, $r23, skip_p3
+bne $r26, $r8, skip_p3
 lw  $r23, 12($r0)
 or $r20, $r20, $r23
 
@@ -100,8 +99,9 @@ skip_p3:
 
 addi $r27, $r0, 1 
 blt $r7, $r27, fully_done
+and $r24, $r24, $r20
 xor $r26, $r20, $r24
-bne $r26, $r24, skip_p4
+bne $r26, $r8, skip_p4
 lw  $r24, 13($r0)
 or $r20, $r20, $r24
 
@@ -109,8 +109,9 @@ skip_p4:
 
 addi $r27, $r0, 1 
 blt $r7, $r27, fully_done
+and $r25, $r20, $r25
 xor $r26, $r20, $r25
-bne $r26, $r25, skip_p5
+bne $r26, $r8, skip_p5
 lw  $r25, 14($r0)
 or $r20, $r20, $r25
 
