@@ -64,14 +64,19 @@ addi $r7,  $r7, 1 # 5 parity bits
 
 k_done:
 
-addi $r21, $r0, 1 # holds a 1
+addi $r8, $r0, 1 # holds a 1
 
 addi $r27, $r0, 2 
 blt $r7, $r27, fully_done
+and $r21, $r21, $r20
 xor $r26, $r20, $r21
 bne $r26, $r21, skip_p1
 lw  $r21, 10($r0)
 or $r20, $r20, $r21
+
+
+
+
 
 skip_p1:
 
