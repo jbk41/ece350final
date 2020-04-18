@@ -77,7 +77,7 @@ or $r20, $r20, $r21
 
 skip_p1:
 
-addi $r27, $r0, 1 
+addi $r27, $r27, 1 
 blt $r7, $r27, fully_done
 and $r22, $r22, $r20
 xor $r26, $r20, $r22
@@ -87,7 +87,7 @@ or $r20, $r20, $r22
 
 skip_p2:
 
-addi $r27, $r0, 1 
+addi $r27, $r27, 1 
 blt $r7, $r27, fully_done
 and $r23, $r23, $r20
 xor $r26, $r20, $r23
@@ -97,7 +97,7 @@ or $r20, $r20, $r23
 
 skip_p3:
 
-addi $r27, $r0, 1 
+addi $r27, $r27, 1 
 blt $r7, $r27, fully_done
 and $r24, $r24, $r20
 xor $r26, $r20, $r24
@@ -107,7 +107,7 @@ or $r20, $r20, $r24
 
 skip_p4:
 
-addi $r27, $r0, 1 
+addi $r27, $r27, 1 
 blt $r7, $r27, fully_done
 and $r25, $r20, $r25
 xor $r26, $r20, $r25
