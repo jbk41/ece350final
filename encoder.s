@@ -2,7 +2,11 @@
 # put message into $r1
 addi $r1, $r0, 1365
 # num bits = $r6
-addi $r6, $r0, 12
+addi $r6, $r0, 26
+
+#max num bits is 27
+addi $r2, $r0, 27
+blt $r2, $r6, too_big_error
 
 # amt to shift to start
 addi $r10, $r0, 32
@@ -121,10 +125,12 @@ skip_p5:
 fully_done:
 add $r29, $r20, $r0
 addi $r30, $r0, 1
+j end
 
 
+too_big_error:
+addi $r30, $r0, 3
+j end
 
 
-
-
-
+end:
