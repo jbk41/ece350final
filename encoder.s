@@ -2,7 +2,7 @@
 # put message into $r1
 lw $r1, 0($r0)
 # num bits = $r6
-lw $r6, 1($r1)
+lw $r6, 1($r0)
 
 #find command, 0 = encode, 1 = decode
 lw $r2, 2($r2)
