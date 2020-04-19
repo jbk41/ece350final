@@ -18,9 +18,9 @@ blt $r2, $r6, too_big_error
 
 
 # amt to shift to start
-addi $r10, $r0, 32
-sub  $r28, $r10, $r6
-sllr  $r1, $r1, $r28
+#addi $r10, $r0, 32
+#sub  $r28, $r10, $r6
+#sllr  $r1, $r1, $r28
 
 
 lw $r2, 3($r0) #r2 = and_1
