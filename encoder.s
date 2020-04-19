@@ -66,7 +66,7 @@ k_done:
 
 addi $r8, $r0, 1 # holds a 1
 
-addi $r27, $r0, 2 
+addi $r27, $r0, 1 
 blt $r7, $r27, fully_done
 and $r21, $r21, $r20
 xor $r26, $r21, $r21
