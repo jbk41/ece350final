@@ -2,7 +2,7 @@
 # put message into $r1
 addi $r1, $r0, 1365
 # num bits = $r6
-addi $r6, $r0, 26
+addi $r6, $r0, 28
 
 #max num bits is 27
 addi $r2, $r0, 27
