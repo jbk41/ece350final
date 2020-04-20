@@ -140,18 +140,19 @@ bne $r2, $r3, command_error: # if code not 0 or 1
 
 addi $r7,  $r7, 2 # Start with 2 parity bits
 addi $r15, $r15, 2
-blt  $r6,  $r15, k_done # if ur bits is less than 2 (aka 1 bit) then ur done
+blt  $r6,  $r15, k_done2 # if ur bits is less than 2 (aka 1 bit) then ur done
 
 addi $r7,  $r7, 1 # 3 parity bits
 addi $r16, $r16, 5
-blt  $r6,  $r16, k_done
+blt  $r6,  $r16, k_done2
 
 addi $r7,  $r7, 1 # 4 parity bits
 addi $r17, $r17, 12
-blt  $r6,  $r17, k_done
+blt  $r6,  $r17, k_done2
 
 addi $r7,  $r7, 1 # 5 parity bits
 
+k_done2:
 
 hamd $r20, $r1, $r7
 
