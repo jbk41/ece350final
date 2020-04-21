@@ -8,12 +8,14 @@ lw $r6, 1($r0)
 lw $r2, 2($r2)
 addi $r3, $r0, 1
 
+# too big
+addi $r2, $r0, 27
+blt $r2, $r6, too_big_error
+
+
 bne $r2, $r0, decoder:    # if code != 0
 
 encoder:
-#max num bits is 27
-addi $r2, $r0, 27
-blt $r2, $r6, too_big_error
 
 
 
